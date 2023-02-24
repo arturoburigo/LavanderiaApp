@@ -27,7 +27,9 @@ export function SignIn() {
         <TouchableOpacity activeOpacity={0.7} className="w-80 items-end">
           <View className="w-4/5 items-end">
             <View className="mt-4">
-              <Text className="text-blue-600">Esqueceu a senha?</Text>
+              <TouchableOpacity activeOpacity={0.7} onPress={() => navigate('forgotpassword')}>
+                <Text className="text-blue-600">Esqueceu a senha?</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </TouchableOpacity>
