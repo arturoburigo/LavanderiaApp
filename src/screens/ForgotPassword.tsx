@@ -5,17 +5,17 @@ import { StandardButton } from '../components/StandartButton';
 
 export function ForgotPassword() {
   return (
-    <View className="flex-1 w-full items-center bg-white">
-      <View className="w-96  mt-4">
+    <View className="flex-1 w-full items-center bg-gray-100">
+      <View className="w-96  mt-10">
         <BackButton />
       </View>
-      <View className="flex-1 mt-52 w-80 items-center">
-        <Text className="text-2xl font-bold">Password Reset</Text>
+      <View className="flex-1  w-80 items-center">
+        <Text className="text-2xl font-bold">Resetar senha</Text>
         <Text className="mt-3 w-80 text-center">
-          If you forgot your password, please enter your email address previously registered
+          Se você esqueceu sua senha, digite o e-mail previamente registrado
         </Text>
-        <View className="mt-2">
-          <InputButton placeholder="Digite seu email" name="mail" />
+        <View>
+          <InputButton placeholder="Digite seu email" name="mail" keyboardType="email-address" />
           <StandardButton title="Send" />
         </View>
       </View>
