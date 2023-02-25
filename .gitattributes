@@ -1,1 +1,12 @@
 *.pbxproj -text
+*.java linguist-detectable=false
+*.swift linguist-detectable=false
+*.rb linguist-detectable=false
+*.cpp linguist-detectable=false
+*.hpp linguist-detectable=false
+*.hxx linguist-detectable=false
+*.cc linguist-detectable=false
+*.bzl linguist-detectable=false
+*.h linguist-detectable=false
+*.m linguist-detectable=false
+
