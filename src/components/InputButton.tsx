@@ -2,7 +2,7 @@ import { View, TextInput, TextInputProps } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 interface Props extends TextInputProps {
-  name: string;
+  name: any;
 }
 
 export function InputButton({ name, ...rest }: Props) {

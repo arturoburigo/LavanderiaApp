@@ -5,6 +5,7 @@ export declare global {
       signup: undefined;
       selectlocation: undefined;
       forgotpassword: undefined;
+      homescreen: undefined;
     }
   }
 }

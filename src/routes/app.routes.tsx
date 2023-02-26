@@ -4,6 +4,7 @@ import { SignIn } from '../screens/SignIn';
 import { SignUp } from '../screens/SignUp';
 import { SelectLocation } from '../screens/SelectLocation';
 import { ForgotPassword } from '../screens/ForgotPassword';
+import { HomeScreen } from '../screens/HomeScreen';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ export function AppRoutes() {
       <Screen name="signup" component={SignUp} />
       <Screen name="selectlocation" component={SelectLocation} />
       <Screen name="forgotpassword" component={ForgotPassword} />
+      <Screen name="homescreen" component={HomeScreen} />
     </Navigator>
   );
 }

@@ -2,11 +2,12 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import { InputButton } from '../components/InputButton';
 import { BackButton } from '../components/BackButton';
 import { StandardButton } from '../components/StandartButton';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export function ForgotPassword() {
   return (
-    <View className="flex-1 w-full items-center bg-gray-100">
-      <View className="w-96  mt-10">
+    <SafeAreaView className="flex-1 w-full items-center bg-gray-100">
+      <View className="w-96 py-7 px-6">
         <BackButton />
       </View>
       <View className="flex-1  w-80 items-center">
@@ -19,6 +20,6 @@ export function ForgotPassword() {
           <StandardButton title="Send" />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
