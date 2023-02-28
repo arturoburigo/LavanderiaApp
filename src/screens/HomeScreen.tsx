@@ -1,9 +1,13 @@
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Touchable, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { HeaderHome } from '../components/HeaderHome';
 import { CardsComponent } from '../components/CardsComponent';
+import { InUse } from '../components/InUse';
+import { useNavigation } from '@react-navigation/native';
 
 export function HomeScreen() {
+  const { navigate } = useNavigation();
+
   return (
     <View className="h-screen w-full">
       <StatusBar style="light" />
@@ -41,6 +45,20 @@ export function HomeScreen() {
             <CardsComponent title="S5" />
           </View>
         </ScrollView>
+      </View>
+      <View className="w-7/12 px-3 mt-7 ">
+        <Text className="text-base font-semibold"> Meus dispositivos</Text>
+      </View>
+      <View className="px-3 mt-3 ">
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <InUse title="S2" backgroundColor="bg-orange-600" timeremaining="32 Min" />
+          <InUse title="S2" backgroundColor="bg-green-600" timeremaining="Pronto" />
+        </ScrollView>
+      </View>
+      <View className="items-center mt-20">
+        <TouchableOpacity onPress={() => navigate('profile')}>
+          <Text>Profile</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );

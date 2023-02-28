@@ -6,6 +6,7 @@ export declare global {
       selectlocation: undefined;
       forgotpassword: undefined;
       homescreen: undefined;
+      profile: undefined;
     }
   }
 }
