@@ -1,6 +1,6 @@
 import { Text, View, TouchableOpacity } from 'react-native';
 import { InputButton } from '../components/InputButton';
-import { BackButton } from '../components/BackButton';
+import { BackButton } from '../components/ArrowBackButton';
 import { StandardButton } from '../components/StandartButton';
 import { SafeAreaView } from 'react-native-safe-area-context';
 

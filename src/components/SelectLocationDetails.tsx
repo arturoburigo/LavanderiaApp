@@ -7,7 +7,7 @@ interface Props extends TouchableOpacityProps {
   hours: string;
 }
 
-export function InputSelectLocation({ adress, distance, hours, ...rest }: Props) {
+export function SelectLocationDetails({ adress, distance, hours, ...rest }: Props) {
   return (
     <View className="items-center mt-3 w-full">
       <TouchableOpacity

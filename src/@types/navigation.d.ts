@@ -7,6 +7,9 @@ export declare global {
       forgotpassword: undefined;
       homescreen: undefined;
       profile: undefined;
+      bottomnavigator: {
+        screen: 'home' | 'settings' | 'profile';
+      };
     }
   }
 }

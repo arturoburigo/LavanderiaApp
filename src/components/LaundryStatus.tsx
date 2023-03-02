@@ -7,7 +7,7 @@ interface Props {
   timeremaining?: string;
 }
 
-export function InUse({ title, backgroundColor = 'bg-blue-500', timeremaining }: Props) {
+export function LaundryStatus({ title, backgroundColor = 'bg-blue-500', timeremaining }: Props) {
   return (
     <View
       className={` ${backgroundColor}  rounded-2xl py-5 border-2 w-56 items-center justify-center flex-row mr-4`}

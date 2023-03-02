@@ -16,18 +16,18 @@ export function SignIn() {
 
   return (
     <View className="flex-1 w-screen bg-gray-100">
-      <View className="items-center py-7">
+      <View className="items-center py-3">
         <View className={screenHeight >= 700 ? 'mt-20 w-80' : 'mt-4 w-80'}>
           <View className="items-center">
             {screenHeight >= 700 && <Logo className="items-center" />}
           </View>
-          <Text className="font-bold text-2xl mt-4">
+          <Text className="font-bold text-2xl mt-3">
             Lavamos suas roupas com carinho e tecnologia!
           </Text>
         </View>
         <View>
           <InputButton placeholder="E-mail" name="mail" keyboardType="email-address" />
-          <InputButton placeholder="Senha" name="lock" />
+          <InputButton placeholder="Senha" name="lock" secureTextEntry={true} />
         </View>
       </View>
       <View className="items-center">
@@ -62,7 +62,7 @@ export function SignIn() {
         />
       </View>
 
-      <View className="items-center justify-center mt-8">
+      <View className="items-center justify-center mt-4">
         <TouchableOpacity onPress={() => navigate('signup')}>
           <Text className="text-blue-600 text-base">Não tem uma conta? Cadastre-se!</Text>
         </TouchableOpacity>
