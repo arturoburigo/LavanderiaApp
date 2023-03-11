@@ -1,4 +1,4 @@
-package com.laundry;
+package org.name.laundry;
 
 import android.os.Build;
 import android.os.Bundle;

@@ -1,4 +1,3 @@
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SignIn } from '../screens/SignInScreen';
 import { SignUp } from '../screens/SignUpScreen';
@@ -10,14 +9,12 @@ const Stack = createNativeStackNavigator();
 
 export function Routes() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="signin">
-        <Stack.Screen name="signin" component={SignIn} />
-        <Stack.Screen name="signup" component={SignUp} />
-        <Stack.Screen name="selectlocation" component={SelectLocation} />
-        <Stack.Screen name="forgotpassword" component={ForgotPassword} />
-        <Stack.Screen name="bottomnavigator" component={MainTabNavigator} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="signin">
+      <Stack.Screen name="signin" component={SignIn} />
+      <Stack.Screen name="signup" component={SignUp} />
+      <Stack.Screen name="selectlocation" component={SelectLocation} />
+      <Stack.Screen name="forgotpassword" component={ForgotPassword} />
+      <Stack.Screen name="bottomnavigator" component={MainTabNavigator} />
+    </Stack.Navigator>
   );
 }

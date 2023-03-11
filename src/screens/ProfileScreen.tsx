@@ -5,9 +5,11 @@ import { StatusBar } from 'expo-status-bar';
 import { View, Text, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProfileButtons } from '../components/ProfileButtons';
+import { useGoogleSignin } from '../services/firebase';
 
 export function Profile() {
   const { navigate } = useNavigation();
+  const { userName, userPhoto, userEmail } = useGoogleSignin();
 
   return (
     <SafeAreaView className="items-center">
@@ -20,8 +22,8 @@ export function Profile() {
         </View>
 
         <View>
-          <Text className="text-white text-3xl font-bold">Arturo Burigo</Text>
-          <Text className="text-gray-300 mt-1 text-base">burigoarturo3@gmail.com</Text>
+          <Text className="text-white text-3xl font-bold">{userName}</Text>
+          <Text className="text-gray-300 mt-1 text-base">{userEmail}</Text>
         </View>
       </View>
       <View className="mt-2">

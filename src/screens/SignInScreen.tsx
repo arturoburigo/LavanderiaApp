@@ -1,18 +1,45 @@
 import { Platform, Text, TouchableOpacity, View, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import { InputButton } from '../components/InputButton';
+import { StandardButton } from '../components/StandartButton';
+import { useGoogleSignin } from '../services/firebase';
 import AppleLogo from '../assets/apple.svg';
 import GoogleLogo from '../assets/google.svg';
 import FacebookLogo from '../assets/facebook.svg';
-
 import Logo from '../assets/logo.svg';
-import { InputButton } from '../components/InputButton';
-import { StandardButton } from '../components/StandartButton';
-
+import auth from '@react-native-firebase/auth';
+import { useEffect, useState } from 'react';
 const { height: screenHeight } = Dimensions.get('window');
 
 export function SignIn() {
   const { navigate } = useNavigation();
+  const { handleGoogleLogin, userName, userEmail } = useGoogleSignin();
+
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
+
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    setUser(user);
+    if (initializing) setInitializing(false);
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
+  if (initializing) return null;
+
+  if (user) {
+    return (
+      <View className="flex-1 items-center justify-center">
+        <TouchableOpacity onPress={() => navigate('signin')}>
+          <Text>Login</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   return (
     <View className="flex-1 w-screen bg-gray-100">
@@ -49,17 +76,14 @@ export function SignIn() {
 
       <View>
         <StandardButton
+          onPress={handleGoogleLogin}
           title="Continuar com Google"
           backgroundColor="bg-white"
           textColor="text-black"
           borderColor="border-2"
           icon={GoogleLogo}
         />
-        <StandardButton
-          title="Continuar com Facebook"
-          className="bg-blue-600"
-          icon={FacebookLogo}
-        />
+        <StandardButton title={userEmail} className="bg-blue-600" icon={FacebookLogo} />
       </View>
 
       <View className="items-center justify-center mt-4">

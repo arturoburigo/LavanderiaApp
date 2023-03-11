@@ -1,4 +1,4 @@
-package com.laundry.newarchitecture.modules;
+package org.name.laundry.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

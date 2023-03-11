@@ -1,4 +1,4 @@
-package com.laundry.newarchitecture.components;
+package org.name.laundry.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;
